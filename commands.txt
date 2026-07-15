@@ -1,0 +1,140 @@
+Day1:
+
+sudo apt update
+
+sudo apt install python3.12-venv
+
+rm -rf .venv
+
+python3 -m venv .venv
+
+source .venv/bin/activate
+
+pip --version
+
+1. sudo apt update
+   Updates the list of available software packages in Ubuntu.
+   sudo = Run with administrator permission.
+   apt = Ubuntu's package manager.
+   update = Refresh the available package list.
+
+2. sudo apt install python3.12-venv
+   Installs the package required to create Python virtual environments.
+   sudo = Run with administrator permission.
+   apt = Ubuntu's package manager.
+   install = Install a software package.
+   python3.12-venv = Virtual environment package for Python 3.12.
+
+3. rm -rf .venv
+   Deletes the existing or incomplete .venv folder.
+   rm = Remove.
+   -r = Recursively delete the folder and its contents.
+   -f = Force deletion without asking for confirmation.
+   .venv = Name of the virtual environment folder.
+
+4. python3 -m venv .venv
+   Creates a new Python virtual environment named .venv.
+   python3 = Runs Python 3.
+   -m = Runs a Python module.
+   venv = Python's virtual environment module.
+   .venv = Name given to the virtual environment folder.
+
+5. source .venv/bin/activate
+   Activates the virtual environment in the current terminal.
+   source = Runs a script in the current shell.
+   .venv/bin/activate = Path to the virtual environment's activation script.
+
+6. pip --version
+   Checks whether pip is available and displays its version.
+   pip = Python package installer.
+   --version = Shows the installed version.
+
+7. pip install requests
+   Installs the requests Python package inside the active virtual environment.
+   pip = Python package installer.
+   install = Install a package.
+   requests = Name of the Python package being installed.
+
+Simple Flow:
+
+apt → Installs software/packages for the Ubuntu operating system.
+venv → Creates an isolated Python environment for a project.
+source → Activates the virtual environment.
+pip → Installs Python packages inside the active virtual environment.
+
+pip install requests
+
+is used to install the requests Python package inside your currently active virtual environment.
+
+Word-by-word meaning
+pip       = Python package installer
+install   = Download and install a package
+requests  = Name of the Python package
+
+The requests package is commonly used to send HTTP requests to APIs or websites.
+
+For example:
+
+import requests
+
+response = requests.get("https://example.com")
+print(response.status_code)
+
+Here, requests.get() sends a GET request to the website.
+
+
+Day 2 :
+
+def calculate_discount(price: float) -> float:
+    return price * 0.10
+
+Read it like this:
+
+price: float  →  This function expects a float as input.
+
+-> float      →  This function is expected to return a float.
+
+Keyword-only arguments:
+
+def create_user(name, *, admin=False):
+    print(name, admin)
+
+You can call:
+
+create_user("Karthi", admin=True)
+
+But not:
+
+create_user("Karthi", True)
+
+The * says:
+
+Everything after me must be passed using its parameter name.
+
+Bad:
+
+def process_user(user):
+    if user:
+        if user.age >= 18:
+            if user.active:
+                return "Allowed"
+            else:
+                return "Inactive"
+        else:
+            return "Too young"
+    else:
+        return "No user"
+
+Better:
+
+def process_user(user):
+    if not user:
+        return "No user"
+
+    if user.age < 18:
+        return "Too young"
+
+    if not user.active:
+        return "Inactive"
+
+    return "Allowed"

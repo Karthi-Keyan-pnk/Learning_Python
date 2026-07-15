@@ -1,0 +1,5 @@
+Customer: Karthi
+Subtotal: 52000
+Discount: 5200.0
+Tax: 8424.0
+Final total: 55224.0
