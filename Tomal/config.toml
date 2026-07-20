@@ -1,0 +1,11 @@
+name="First Project"
+version="1.0.1"
+website="adfhaf"
+
+
+[items]
+number=[1,2,3,4]
+letters=["a","b","c"]
+
+[items.innertable]
+functions="good"

@@ -138,3 +138,13 @@ def process_user(user):
         return "Inactive"
 
     return "Allowed"
+    
+    
+    
+    doubt :
+    
+    == when automatically call __eq_ 
+    
+    @frappe.whitelist()​​ 
+    
+    
